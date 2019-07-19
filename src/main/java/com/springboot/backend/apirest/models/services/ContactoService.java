@@ -19,4 +19,24 @@ public class ContactoService implements IContactoService {
 		return contactoDao.findAllContactos();
 	}
 
+
+	@Override
+	public Contacto findById(Long id) {
+		return contactoDao.findById(id).orElse(null);
+	}
+
+
+	@Override
+	public Contacto save(Contacto contacto) {
+		return contactoDao.save(contacto);
+	}
+
+
+	@Override
+	public void delete(Long id) {
+		contactoDao.deleteById(id);
+		
+	}
+
+
 }
